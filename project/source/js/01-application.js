@@ -1,3 +1,1 @@
-jQuery(function(){
-	alert("a");
-})
+console.log("Welcome to ethics-skeleton"); 

@@ -1,9 +1,11 @@
 
 require ("colors");
+require ("gulp-livereload");
 
 var app = {
 	autoprefixer: require("gulp-autoprefixer"),
 	concat: require("gulp-concat"),
+	connect: require("gulp-connect"),
 	date: require("dateformat"),
 	fs: require("fs"),
 	gulp: require("gulp"),
@@ -36,9 +38,9 @@ var directories = {
 		]
 	},
 	"script" : "project/source/js",
-	"www": "project/www/",
-	"css": "project/www/css/",
-	"js": "project/www/js/"
+	"www": "project/www",
+	"css": "project/www/css",
+	"js": "project/www/js"
 };
 
 
@@ -60,6 +62,8 @@ app.gulp.task("html", function(){
 		   .pipe(app.concat(filename))
 		   .pipe(app.gulp.dest(directories.www));
 	}
+	app.gulp.src(directories.www)
+	   .pipe(app.connect.reload());
 	toLog("HTML concat!");
 });
 
@@ -68,14 +72,18 @@ app.gulp.task("scss", function(){
 		var sass = app.gulp.src(directories.smacss.root + "/style.scss")
 		   .pipe(app.sass())
 		   .pipe(app.autoprefixer({
-		       browsers: ["last 2 versions"],
+		       browsers: ["last 15 versions", "> 1%", "ie 9"],
 		   }))
 		   .pipe(app.gulp.dest(directories.css));
-		if (compress)
+		if (compress){
 			sass.pipe(app.minifyCSS())
 				.pipe(app.rename({suffix: ".min"}))
 				.pipe(app.gulp.dest(directories.css));
-		console.log("SASS compress!");
+			console.log("SASS compress!");
+		}else
+			sass.pipe(
+				app.connect.reload()
+			);
 	}
 	toLog("SASS compile!");
 });
@@ -92,8 +100,20 @@ app.gulp.task("js", function(){
 			  .pipe(app.rename({suffix: ".min"}))
 			  .pipe(app.gulp.dest(directories.js));
 			toLog("JS compress!");
-		}
+		}else
+			js.pipe(
+				app.connect.reload()
+			);
 	}
+});
+
+app.gulp.task("connect", function(){
+	toLog("Server run to localhost:7700");
+	app.connect.server({
+		livereload: true,
+		port: 7700,
+		root: directories.www
+	});
 });
 
 app.gulp.task("watch", function(){
@@ -103,7 +123,7 @@ app.gulp.task("watch", function(){
 	app.gulp.watch(directories.script + "/*.js", ["js"]);
 });
 
-app.gulp.task("default", ["watch"]);
+app.gulp.task("default", ["connect", "watch"]);
 
 app.gulp.task("compress", function(){
 	compress = true;

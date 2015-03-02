@@ -1,0 +1,82 @@
+.unreset *{
+	line-height: normal;
+}
+.unreset h1,
+.unreset h2,
+.unreset h3,
+.unreset h4,
+.unreset h5,
+.unreset h6{
+	display: block;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+}
+.unreset h1{
+	font-size: 2em;
+	-webkit-margin-before: 0.67em;
+	-webkit-margin-after: 0.67em;
+}
+.unreset h2{
+	font-size: 1.5em;
+	-webkit-margin-before: 0.83em;
+	-webkit-margin-after: 0.83em;
+}
+.unreset h3{
+	font-size: 1.17em;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+}
+.unreset h4{
+	-webkit-margin-before: 1.33em;
+	-webkit-margin-after: 1.33em;
+}
+.unreset h5{
+	font-size: 0.83em;
+	-webkit-margin-before: 1.67em;
+	-webkit-margin-after: 1.67em;
+}
+.unreset h6{
+	font-size: 0.67em;
+	-webkit-margin-before: 2.33em;
+	-webkit-margin-after: 2.33em;
+}
+.unreset p{
+	display: block;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+.unreset ul,
+.unreset ol,
+.unreset menu,
+.unreset dir{
+	display: block;
+	list-style-type: disc;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 40px;
+}
+.unreset li{
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+.unreset ol{
+	list-style-type: decimal;
+}
+.unreset b,
+.unreset strong{
+	font-weight: bold;
+}
+
+.unreset i, 
+.unreset cite, 
+.unreset em, 
+.unreset var, 
+.unreset address, 
+.unreset dfn {
+	font-style: italic;
+}

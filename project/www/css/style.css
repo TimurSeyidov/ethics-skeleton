@@ -27,12 +27,125 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-#element {
-  background: red;
-  border-radius: 15px;
-  margin: 20px;
-  padding: 40px;
-  transition: all .3s ease; }
+.unreset * {
+  line-height: normal; }
 
-#element:hover {
-  background: green; }
+.unreset h1, .unreset h2, .unreset h3, .unreset h4, .unreset h5, .unreset h6 {
+  display: block;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold; }
+
+.unreset h1 {
+  font-size: 2em;
+  -webkit-margin-before: 0.67em;
+  -webkit-margin-after: 0.67em; }
+
+.unreset h2 {
+  font-size: 1.5em;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em; }
+
+.unreset h3 {
+  font-size: 1.17em;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em; }
+
+.unreset h4 {
+  -webkit-margin-before: 1.33em;
+  -webkit-margin-after: 1.33em; }
+
+.unreset h5 {
+  font-size: 0.83em;
+  -webkit-margin-before: 1.67em;
+  -webkit-margin-after: 1.67em; }
+
+.unreset h6 {
+  font-size: 0.67em;
+  -webkit-margin-before: 2.33em;
+  -webkit-margin-after: 2.33em; }
+
+.unreset p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px; }
+
+.unreset ul, .unreset ol, .unreset menu, .unreset dir {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px; }
+
+.unreset li {
+  display: list-item;
+  text-align: -webkit-match-parent; }
+
+.unreset ol {
+  list-style-type: decimal; }
+
+.unreset b, .unreset strong {
+  font-weight: bold; }
+
+.unreset i, .unreset cite, .unreset em, .unreset var, .unreset address, .unreset dfn {
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Cuprum';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cuprum'), local('Cuprum-Regular'), url(http://fonts.gstatic.com/s/cuprum/v7/GB8Dk-C1ACJO8x0iLEheRevvDin1pK8aKteLpeZ5c0A.ttf) format('truetype'); }
+
+@font-face {
+  font-family: 'Cuprum';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Cuprum Bold'), local('Cuprum-Bold'), url(http://fonts.gstatic.com/s/cuprum/v7/n3IzcUkIerri6e9sz7DgbiZ2oysoEQEeKwjgmXLRnTc.ttf) format('truetype'); }
+
+@font-face {
+  font-family: 'PT Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Mono'), local('PTMono-Regular'), url(http://fonts.gstatic.com/s/ptmono/v4/ZRx2ZfTMsf3VhsppEpgKZQLUuEpTyoUstqEm5AMlJo4.ttf) format('truetype'); }
+
+html {
+  height: 100%; }
+
+body {
+  background: #EEE;
+  font-family: "Cuprum";
+  font-size: 16px;
+  height: 100%;
+  position: relative; }
+
+main {
+  background: #FFF;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  width: 60%; }
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 40px; }
+
+p {
+  font-size: 1em; }
+
+li span {
+  background: #EEE;
+  border: 1px solid #CCC;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  color: #E100BD;
+  display: inline-block;
+  font-family: "PT Mono";
+  font-size: .75em;
+  padding: 5px; }

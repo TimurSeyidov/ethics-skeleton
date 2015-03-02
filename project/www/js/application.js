@@ -1,7 +1,1 @@
-jQuery(function(){
-	alert("a");
-})
-jQuery(function(){
-	alert('b');
-	//
-})
+console.log("Welcome to ethics-skeleton"); 
